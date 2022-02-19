@@ -1,0 +1,1293 @@
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Дистанционные образовательные технологии</title>
+    <link rel="stylesheet" href="webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="webjars/font-awesome/5.1.0/css/all.css"/>
+    <link rel="stylesheet" href="resources/css/login-page.css"/>
+    <link rel="shortcut icon" href="resources/gdiz/images/ico.png">
+
+    <script type="text/javascript" src="webjars/jquery/3.2.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="webjars/jquery-validation/1.17.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="webjars/jquery-validation/1.17.0/additional-methods.min.js"></script>
+    <!--[if lte IE 11]><script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script><![endif]-->
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(67647318, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/67647318" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+
+</head>
+<body>
+7
+
+<nav class="navbar navbar-expand-lg navbar-dark text-light" style="background: linear-gradient(#61A3CB,#82B8D6);">
+    <div class="container">
+        <a class="navbar-brand" href=""><span class="text-light"><i
+                class="fas fa-globe-americas"></i></span>
+            Дистанционные образовательные технологии
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Студенту
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/info?page=faq"
+                           target="_blank">Практика</a>
+                        <a class="dropdown-item" href="/info?page=education"
+                           target="_blank">Научная стажировка магистрантов</a>
+                        
+                           
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="http://buketov.edu.kz" target="_blank">Сайт университета</a>
+
+
+
+
+
+                        <a class="dropdown-item" href="http://library.ksu.kz" target="_blank">Научная библиотека</a>
+                        <a class="dropdown-item"
+                           href="http://webirbis.ksu.kz"
+                           target="_blank">
+                            Электронный каталог (Электронная библиотека)
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <!--!!!!! -->
+                    <form id="command" class="form-inline my-2" action="/login"
+                          method="post" autocomplete="on">
+                        <input class="form-control mr-1" type="text" placeholder="Логин"
+                               name="username" required>
+                        <input class="form-control mr-1" type="password"
+                               placeholder="Пароль" name="password" required>
+                        <button class="btn btn-success" type="submit">
+                            <span><i class="fas fa-sign-in-alt"></i></span>
+                        </button>
+                    </form>
+
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link my-1 ml-2" data-toggle="dropdown"
+                       aria-expanded="false">
+                        
+                            
+                                ru
+                            
+                            
+
+                        
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" onclick="show('en')">English</a>
+                        <a class="dropdown-item" onclick="show('ru')">Русский</a>
+                        <a class="dropdown-item" onclick="show('kz')">Қазақша</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mb-3 mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            
+            <code style="font-size: 1.5rem; color:#bd4147;">Центр дистанционного образования</code>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 mr-lg-5">
+            <img src="https://buketov.edu.kz/img/logo.png" height="100">
+        </div>
+
+        <div class="col-lg-10">
+            <h2>Карагандинского  университета имени Е.А. Букетова</h2>
+            <i class="far fa-envelope"></i> CALL-CENTER 8 7212 900270
+        </div>
+
+
+</div>
+<div class="jumbotron pt-0">
+    <div class="container">
+        <br>
+        <p>
+            <a class="btn btn-lg btn-success" href="#" data-toggle="modal"
+               data-target=".bd-example-modal-lg" onclick="resetLostLoginForm()">Получить пароль / Забыли пароль </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+          <!--button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+              Сall-центр
+            </button>
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel2"><i class="fas fa-info-circle">Сall-центр</i></h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <td><a href="https://drive.google.com/drive/folders/1MRmbi6k_DUPid3grRs5u9-JTx3zPwNLJ?usp=sharing">График ознакомительных вебинаров</a></td>
+
+
+                            </tr>
+                            </thead>
+
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </p>
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModa45">
+            Пәнді таңдау вебинарлары/Вебинары по выбору дисциплин
+        </button>
+        <div class="modal fade" id="myModa45" tabindex="-1" role="dialog" aria-labelledby="myModalLabe45" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabe45"><i class="fas fa-info-circle">Пәнді таңдау вебинарлары/Вебинары по выбору дисциплин </i></h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <td><a href="  https://drive.google.com/drive/folders/13Gb1oP28ASUNseOaAuQBHB22PBagrsGV?usp=sharing">График  вебинаров</a></td>
+
+
+                            </tr>
+                            </thead>
+
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </p>
+
+
+
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
+            Вебинары по организации ДОТ
+        </button>
+        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel3"><i class="fas fa-info-circle">Вебинары по организации ДОТ</i></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <td><a href="https://drive.google.com/drive/folders/1512lkEC8jRBo4RVzCwFuKC7ZdblwAByZ?usp=sharing">Просмотреть график</a></td>
+
+
+                            </tr>
+                            </thead>
+
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+                    </div>
+                </div>
+            </div></div>
+
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">
+            Летний семетр
+        </button>
+       <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel4"><i class="fas fa-info-circle">Летний семестр</i></h4>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <table class="table table-hover">
+                            <thead>
+
+                            <tr>
+                                <th scope="row"><a href="https://drive.google.com/drive/folders/1fU-Xbg8XNagFu1zW362-vkeBRqrMSLNr?usp=sharing">Летний семестр</a></th>
+
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row"><a href="https://drive.google.com/drive/folders/1cGy3w7V4HM6Lrhe-HseERZNNRlvBnS1L?usp=sharing">Инструкция</a></th>
+
+
+
+                            </tr>
+
+                            <tr>
+                                <th scope="row"><a href="https://drive.google.com/file/d/126WPbibbLtc3ixShNVrdqwcPo37G_beT/view?usp=sharing">РАСПИСАНИЯ ЗАНЯТИЙ В РАМКАХ ЛИКВИДАЦИИ АКАДЕМИЧЕСКИХ РАЗНИЦ ДИСЦИПЛИН УЧЕБНЫХ ПЛАНОВ ДЛЯ СТУДЕНТОВ 1 КУРСА (2 ГОДА) ОЧНО-СОКРАЩЕННОЙ ФОРМЫ С ПРИМЕНЕНИЕМ ДОТ (прием 2020 г.)</a></th>
+
+
+
+                            </tr>
+
+
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                                <th scope="row"><a href="https://drive.google.com/drive/folders/17UqdrZITVQzEWUmod3qzS56peM4YfNH9?usp=sharing">График посещения занятий для переведенных и восстановленных обучающихся</a></th>
+
+
+
+                            </tr>
+
+
+
+
+
+
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+                    </div>
+                </div>
+            </div></div>--->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal912">
+                Вниманию студентов переведенных из Центрально-Казахстанской Академии
+
+
+            </button>
+            <div class="modal fade" id="myModal912" tabindex="-1" role="dialog" aria-labelledby="myModalLabel912" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel912"><i class="fas fa-info-circle">График онлайн консультаций </i></h4>
+                        </div>
+                        <div class="modal-body">
+        <p>Танысу онлайн кездесуіне қатысу үшін <br>сіз осы сілтемені пайдаланып, 1972 паролін енгізуіңіз керек</p>
+        <p>Для участия в ознакомительной онлайн встрече <br>необходимо использовать эту ссылку и ввести пароль 1972</p>
+
+        <h4><a href="https://idl.buketov.edu.kz/spr/c_rus.pdf">РАСПИСАНИЕ
+            ознакомительных онлайн встреч</a></h4>
+        <h4><a href="https://idl.buketov.edu.kz/spr/c_kaz.pdf">КЕСТЕСІ
+             танысу онлайн
+            кездесулері</a></h4>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+    </div>
+</div>
+</div></div>
+
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal91">
+                ВНИМАНИЮ МАГИСТРАНТОВ И ДОКТОРАНТОВ, <br>ПРИНЯТЫХ НА ОБУЧЕНИЕ В ЯНВАРЕ 2022 ГОДА<br>
+
+
+            </button>
+            <div class="modal fade" id="myModal91" tabindex="-1" role="dialog" aria-labelledby="myModalLabel91" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel91"><i class="fas fa-info-circle">График онлайн консультаций </i></h4>
+                        </div>
+                        <div class="modal-body">
+        <p>Танысу онлайн кездесуіне қатысу үшін <br>сіз осы сілтемені пайдаланып, 1972 паролін енгізуіңіз керек</p>
+        <p>Для участия в ознакомительной онлайн встрече <br>необходимо использовать эту ссылку и ввести пароль 1972</p>
+
+        <h4><a href="https://idl.buketov.edu.kz/spr/d_rus.pdf">РАСПИСАНИЕ
+            ознакомительных онлайн встреч с ДОКТОРАНТАМИ, принятыми на обучение
+            в январе 2022 года</a></h4>
+        <h4><a href="https://idl.buketov.edu.kz/spr/d_kaz.pdf">КЕСТЕСІ
+            2022 жылғы қаңтарда  оқуға қабылданған ДОКТОРАНТТАРМЕН танысу онлайн
+            кездесулері</a></h4>
+
+        <h4><a href="https://idl.buketov.edu.kz/spr/m_rus.pdf">РАСПИСАНИЕ
+            ознакомительных онлайн встреч с МАГИСТРАНТАМИ, принятыми на обучение  в январе 2022 года</a></h4>
+        <h4><a href="https://idl.buketov.edu.kz/spr/m_kaz.pdf">Кестесі
+            2022 жылғы қаңтарда  оқуға қабылданған МАГИСТРАНТТАРМЕН танысу
+            онлайн кездесулері</a></h4>
+
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+    </div>
+</div>
+</div></div>
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal9">
+            Графики консультаций
+        </button>
+        <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel9" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel9"><i class="fas fa-info-circle">График онлайн консультаций </i></h4>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <h4><a href="https://idl.buketov.edu.kz/spr/1courseDOT.pdf"> График онлайн консультаций для студентов 1 курса с применением ДОТ</a></h4>
+                        <h4><a href="https://drive.google.com/drive/folders/1eBU_rx18RwY0F7e3FlgeWI7R8A21vgbc?usp=sharing"> Обзорные лекции 1 курса</a></h4>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+
+                    </div>
+                </div>
+                       </div></div>
+
+
+
+
+
+        <button type="button" class="btn btn-primary btn-lg" target="_blank"> <a style="color: white;" href="info?page=faq">ПРАКТИКА</a> </button>
+        <button type="button" class="btn btn-primary btn-lg" target="_blank"> <a style="color: white;" href="info?page=education">Научная стажировка магистрантов</a> </button>
+
+
+
+
+        <!--  <h2  class="text-primary" style="text-align: center;"><strong>Информация о виртуальных приемных и call-центров по разъяснению формата обучения в 2021-2022&nbsp; учебном году</strong></h2>
+          <table class="text-primary" style="width: 100%; ">
+              <tbody>
+              <tr>
+                  <td style="text-align: center;" colspan="2">
+                      <p class="text-info"><strong>Ссылка на виртуальную приемную по разъяснению формата обучения в новом учебном году</strong></p>
+                      <p><u><a href="https://us04web.zoom.us/j/2107810321">https://us04web.zoom.us/j/2107810321 (пароль 1972)</a></u></p>
+                  </td>
+              </tr>
+              <tr>
+                  <td style="width: 623px;" colspan="2">
+                      <p  class="text-info" style="text-align: center;"><strong>Номера call-центров по разъяснению формата обучения в новом учебном году</strong></p>
+                  </td>
+              </tr>
+              <tr style="text-align: center;">
+                  <td style="width: 623px;" colspan="2">
+                      <h1>8(7212)900270 <br /> <strong>номер Call-центра</strong></h1>
+                  </td>
+              </tr>
+              <tr style="text-align: center;">
+                  <td style="width: 311px;">
+                      <p>87018954530 <br /> Жетимекова Гаухар Женисовна, <br /> <strong>руководитель ЦДО</strong></p>
+                  </td>
+                  <td style="width: 312px;">
+                      <p>87016041430 <br /> Мусенова Эльмира Куанаровна,<br /> <strong>&nbsp;руководитель офис регистратора</strong></p>
+                  </td>
+              </tr>
+              <tr style="text-align: center;">
+                  <td style="width: 311px;">
+                      <p>87004805479 <br /> Казимова Динара Ашубасаровна, <br /> <strong>декан факультета математики и информационных технологий</strong></p>
+                  </td>
+                  <td style="width: 312px;">
+                      <p>87009768144 <br /> Зейниденов Асылбек Калкенович, <br /> <strong>декан физико-технического факультета</strong></p>
+                  </td>
+              </tr>
+              <tr style="text-align: center;">
+                  <td style="width: 311px;">
+                      <p>87015658369 <br /> Хусаинова Жибек Сеитовна, <br /> <strong>декан экономического факультета</strong></p>
+                  </td>
+                  <td style="width: 312px;">
+                      <p>87014567003 <br /> Серикбаева Абзал Мухаметжанович, <br /> <strong>декан юридического факультета</strong></p>
+                  </td>
+              </tr>
+              <tr style="text-align: center;">
+                  <td style="width: 311px;">
+                      <p>87003592310 <br /> Иманбеков Мирлан Мейрамбекович, <br /> <strong>декан педагогического факультета</strong></p>
+                  </td>
+                  <td style="width: 312px;">
+                      <p>87757304033 <br /> Бейсенова Айгуль Аманжановна, <br /> <strong>декан факультета философии и психологии</strong></p>
+                  </td>
+              </tr>
+              <tr style="text-align: center;">
+                  <td style="width: 311px;">
+                      <p>87761886315 <br /> Джумабеков Жамбыл Азмуханович, <br /> <strong>декан исторического факультета</strong></p>
+                  </td>
+                  <td style="width: 312px;">
+                      <p>87012982535 <br /> Аданов Куанышбек Буланович,</br>
+                      <strong>декан факультета физической культуры и спорта</strong></p>
+                  </td>
+              </tr>
+              <tr style="text-align: center;">
+                  <td style="width: 311px;">
+                      <p>87011738339 <br /> Тлеужанова Гульназ Кошкимбаевна, <br /> <strong>декан факультета иностранных языков</strong></p>
+                  </td>
+                  <td style="width: 312px;">
+                      <p>87003047908 <br /> Талжанов Серикболат Алдунгарович, <br /> <strong>декан биолого-географического факультета</strong></p>
+                  </td>
+              </tr>
+              <tr>
+                  <td style="width: 311px; text-align: center;">
+                      <p>87015166048 <br /> Буркеев Мейрам Жунусович, <br /> <strong>декан химического факультета</strong></p>
+                  </td>
+                  <td style="width: 312px;">
+                      <p style="text-align: center;">87015510613 <br /> Түйте Елдос Ерғазыұлы, <br /> <strong>декан филологического факультета</strong></p>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
+
+  --->
+
+        
+            
+                
+<style>
+    .divcl {display:inline-block; height:120px; width:200px;
+        border: 1px solid gray; margin-right:10px; margin-bottom:10px; vertical-align:top;
+        padding:10px;}
+    .divcl h2 {color:blue; margin:0px; font-weight:normal; font-size:18px;}
+    .divcl p {color:black;}
+    .divcl button {color:white; border:none; outline:none; padding:10px; background:linear-gradient(to top, ForestGreen 5%, LimeGreen 5%);
+        box-shadow:0 0 3px black;}
+
+</style>
+
+<script>
+
+
+    $(function() {
+        var iframe = $(".video2").attr("src");
+
+
+
+
+        $('#button1').click(function() {
+
+            $('#text1').slideToggle(200);
+            $('#text2').css("display","none");
+            $(".video2").attr("src","https://www.youtube.com/embed/OrzQpUaqAjc");
+            $(".video2").attr("src",iframe);
+
+
+
+
+
+        });
+
+        $('#button2').click(function() {
+
+
+            $('#text2').slideToggle(200);
+            $('#text1').css("display","none");
+            $(".video2").attr("src","https://www.youtube.com/embed/tEuMGhyHUdo");
+            $(".video2").attr("src",iframe);
+
+
+
+
+
+
+
+        });
+
+
+    });
+
+
+
+</script>
+<div class ="btn btn-primary btn-lg" style="padding:10px;position:fixed;bottom:50px; z-index: 999999;
+right:50px;cursor:pointer; color:#ffffff;" ><a style="color:#ffffff;" href="https://www.instagram.com/idlksuonline/">INSTAGRAM @idlksuonline</a>
+    <br>CALL-CENTER: 8(7212)900270
+    <br><br><a style="color:#ffffff;" href="https://buketov.edu.kz/index.php?r=admission%2Findex">Прием в университет</a></div></div>
+<h2><a href="https://www.instagram.com/idlksuonline/">INSTAGRAM - Онлайн техническая поддержка портала @idlksuonline</a></h2>
+
+
+
+<!--<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div><a href="https://drive.google.com/drive/folders/1Ji9AhWw9XeqC9qbhQxEGiLonlVdagj2f?usp=sharing"> Қорытынды емтихан/Итоговая аттестация </a></div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <h4><a href="https://drive.google.com/file/d/13TX_KMRi_djiulKnbcYm_Xycy_rXBEMm/view?usp=sharing"> Қорытынды атестаттаудың ұйымдастырылуы бойынша вебинарлар кестесі / Расписание вебинаров по проведению итоговой аттестации</a></h4>
+        <h4 class="text-success"><i class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></i><a href="https://drive.google.com/drive/folders/1lNfV76Yv3uAAjgcCCHvAyhj-vGEdwV9v?usp=sharing" target="_blank">Расписание комплексных экзаменов и защиты дипломных работ</a></h4>
+
+
+    </div>
+</div>
+
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div> Уважаемые студенты, магистранты и докторанты! </div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <h4><a href="https://drive.google.com/file/d/1TKG8qvblWB0a05kG-N7RNmQ7EFf5g_Ks/view?usp=sharing"> Новые поступления в научную библиотеку</a></h4>
+
+
+        <h4><a href="https://drive.google.com/file/d/1VrFMEjTOstVw-JHpZzcZ9ZnrI1ghHZRB/view?usp=sharing"> График информационно-разъяснительных работ по организации учебного процесса весеннего семестра для студентов, магистрантов, докторантов 1 курса</a></h4>
+
+        <h4><a href="https://drive.google.com/file/d/1N5xMScVkO4kZzEIG8EbNnqvJfRSwrXaq/view?usp=sharing"> График информационно-разъяснительных работ по организации учебного процесса весеннего семестра для студентов, магистрантов, докторантов 2-3 курса</a></h4>
+
+
+        <h4><a href="https://drive.google.com/file/d/15F7qEaXH0yfJoVL3oi4ST4kvs4F5g6Bn/view?usp=sharing"> График консультаций по организации зимней экзаменационной сессии на 2021-2022 учебный год</a></h4>
+
+        <h4 class="text-primary"><a href="https://drive.google.com/file/d/1l9ymdN-2yePkKvGow2Z-WUqajNVVnqGg/view?usp=sharing" target="_blank">С 7 декабря по 12 декабря будут проводиться онлайн консультации «По организации зимней экзаменационной сессии на 2021-2022 учебный год».
+        </a></h4>
+
+    </div>
+</div>
+
+-->
+
+
+<div id=text1 style="display:none;">
+
+    <a  href="https://idl.ksu.kz/spr/istr.pdf" target="_blank">Инструкция для студентов</a>
+    <br>
+    <a  href="https://idl.ksu.kz/spr/in_rus.pdf" target="_blank">Инструкция для студентов дневного отделения</a>
+
+    <div class="video-container" align="center" >
+        <iframe align="center"  class="video2" width="560" height="315"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+
+</div>
+<br>
+<li  class="btn btn-primary btn-lg btn-block" id=button2><a href="#" style="color:#ffffff;">Видеоинструкция для преподавателей</a></li>
+<div id=text2 style="display:none;">
+
+    <div class="video-container" align="center" >
+        <iframe  align="center" class="video2" width="560" height="315"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</div>
+
+
+<h2><a href="https://idl.ksu.kz/materials/">План издания электронных материалов</a></h2>
+
+<h2><a href="https://idl.buketov.edu.kz/baseupload/katalog2021.pdf">Каталог для конкурса "Лучший преподаватель 2021"</a></h2>
+
+<!---<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+<div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+<div> Уважаемые преподаватели и студенты!  </div>
+</div>
+<div class="card-block" style="padding: 12px 20px;">
+
+<h4><a href="https://drive.google.com/file/d/1ZBZkT2_grC_dCARlRtgLLbZ_61P-L76n/view?usp=sharing" target="_blank"> Информируем Вас о том что, в период со 2 ноября по 7 ноября планируется посещение
+лекций ректором университета Н.О. Дулатбековым и и.о. проректором по академическим вопросам Б.Р. Нусупбековым</a>
+</h4>
+</div>
+</div>
+-->
+
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div> </div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+
+        <!--  <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/drive/folders/1USNgF1nl6T683mcEx8BB1AHufM1t9s9R?usp=sharing" >Расписание занятий /Сабақ кестесі </a></h4>
+  -->
+
+          <h4 class="text-primary"><a href="https://idl.buketov.edu.kz/spr/bibl_ru.pdf" target="_blank">Научная библиотека Карагандинского университета им. Е.А. Букетова</a></h4>
+
+      </div>
+  </div>
+
+<!-- <div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+      <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+          <div> Уважаемые студенты очной формы обучения с применением ДОТ!</div>
+      </div>
+      <div class="card-block" style="padding: 12px 20px;">
+
+          <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/open?id=1n3qc0QkeRe_l7fCFgjK237np7iv7IJ1g" >Расписание экзаменов /Емтихан  кестесі </a></h4>
+
+        <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/drive/folders/1R1WHOzm7wylEyxIy2rmkPNQFlJMzcpAy?usp=sharing" >Госэкзамены по дисциплине "Современная история Казахстана" /"Қазақстанның қазіргі заман тарихы"  пәні бойынша мемлекеттік емтиханы </a></h4>
+        <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/file/d/1scui-BiG1gb-_zTFE6ktjR37bw8CAqLk/view?usp=sharing" >Расписание государственного экзамена по дисциплине «Современная история Казахстана» (для восстановленных и переведенных студентов) /«Қазақстанның қазіргі заман тарихы» пәні бойынша мемлекеттік емтихан кестесі (қайта қабылданған студенттер үшін) </a></h4>
+
+        <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/drive/folders/1SKl8k3MK0zO1L6adshWTEkgZBEf0kyA9?usp=sharing" >Расписание экзаменов /Емтихан  кестесі </a></h4>
+
+
+        <h4 class="text-success"><a href="https://drive.google.com/open?id=1gywMXpBqipeOf-X3A1rewvWepQY0u5aV" target="_blank">ИНСТРУКЦИИ по проведению итогового контроля в рамках экзаменационной сессии
+            с примененнием дистанционных образовательных технологий
+            (для обучающихся бакалавриата очной формы обучения с применением ДОТ)</a></h4>
+
+        <h4 class="text-primary"><a href="https://drive.google.com/drive/folders/16Owyax5tXio8759FCxq_pIYZlCrMBLpt?usp=sharing" target="_blank">Ресурсы, предоставляемые библиотекой
+    </a></h4>
+
+    </div>
+</div> -->
+
+<!--
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div> Уважаемый студент очной формы обучения!</div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/drive/folders/1M8G2DGHgmAPZefGCfyT0eICNRAvPKmXw?usp=sharing" >Госэкзамены по дисциплине "Современная история Казахстана" /"Қазақстанның қазіргі заман тарихы"  пәні бойынша мемлекеттік емтиханы </a></h4>
+        <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/file/d/1scui-BiG1gb-_zTFE6ktjR37bw8CAqLk/view?usp=sharing" >Расписание государственного экзамена по дисциплине «Современная история Казахстана» (для восстановленных и переведенных студентов) /«Қазақстанның қазіргі заман тарихы» пәні бойынша мемлекеттік емтихан кестесі (қайта қабылданған студенттер үшін) </a></h4>
+
+
+        <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/drive/folders/1Xl2LPR4Pni154rpb30lj3a3T2ehkpqvg?usp=sharing" >Расписание экзаменов /Емтихан  кестесі </a></h4>
+
+        <h4 class="text-success"><a href="https://drive.google.com/file/d/1SYYCrqy68dG1IpJcrRzEMdi5dCDuaSwm/view?usp=sharing" target="_blank">ИНСТРУКЦИИ по проведению итогового контроля в рамках экзаменационной сессии
+            с примененнием дистанционных образовательных технологий
+            (для обучающихся бакалавриата, магистратуры и докторантуры)</a></h4>
+
+       <h4 class="text-success"><a  target="_blank" href="https://drive.google.com/file/d/1zFfMKhNeSUqrxoNzSY-fjS-tpyo2asZm/view?usp=sharing" >Госэкзамены по дисциплине "Современная история Казахстана" /"Қазақстанның қазіргі заман тарихы"  пәні бойынша мемлекеттік емтиханы </a></h4>
+        <h4 class="text-primary"><a href="https://drive.google.com/drive/folders/16Owyax5tXio8759FCxq_pIYZlCrMBLpt?usp=sharing" target="_blank">Ресурсы, предоставляемые библиотекой
+    </a></h4>
+
+    </div>
+</div>
+
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div> Уважаемые магистранты и докторанты!</div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <h4 class="text-success"><a href="https://drive.google.com/file/d/1SYYCrqy68dG1IpJcrRzEMdi5dCDuaSwm/view?usp=sharing" target="_blank">ИНСТРУКЦИИ по проведению итогового контроля в рамках экзаменационной сессии
+            с примененнием дистанционных образовательных технологий
+            (для обучающихся бакалавриата, магистратуры и докторантуры)</a></h4>
+        <h4 class="text-success"><i class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></i><a href="https://drive.google.com/open?id=15gkoGYrdkFjrv8rB3RiKyCmjZRUVrWsM" target="_blank">Инструкция по организации итоговой аттестации (защита магистерских диссертаций, проектов)</a></h4>
+        <h4 class="text-success"><a href="http://idl.ksu.kz/spr/rasmag.pdf" target="_blank">Расписание весенней экзаменационной сессии докторантов</a></h4>
+       <h4 class="text-success"><a href="https://drive.google.com/drive/folders/1VUT7psytiHB7l9F_EbcH5SzKw99XAkfS?usp=sharing" target="_blank">Расписание весенней экзаменационной сессии магистрантов</a></h4>
+        <h4 class="text-success"><a href="https://drive.google.com/file/d/1SbwE0QN5cvBoRMqHxTP3Aw6AJaYS-KWw/view?usp=sharing" target="_blank">График итоговой аттестации и защиты магистерских диссертаций, проектов</a></h4>
+        <h4 class="text-success"><a href="http://idl.ksu.kz/spr/mveb.pdf" target="_blank">График онлайн вебинаров по проведению итоговой аттестации в магистратуре</a></h4>
+        <h4 class="text-primary"><a href="http://idl.ksu.kz/spr/predz.pdf" target="_blank">График проведения предварительной защиты магистерских диссертаций  </a></h4>
+       <h4 class="text-primary"><a href="https://drive.google.com/drive/folders/16Owyax5tXio8759FCxq_pIYZlCrMBLpt?usp=sharing" target="_blank">Ресурсы, предоставляемые библиотекой
+    </a></h4>
+    </div>
+</div>
+
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div> Уважаемые студенты 1 курса! </div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+
+        < !--  <h4 class="text-primary"><a href="https://drive.google.com/drive/folders/1SSoPgzluifaGC3EV9sCpjdQFuHSO6Nif?usp=sharing" target="_blank">Расписание обзорных лекций       </a></h4>
+        - ->
+        <h4 class="text-primary"><a href="https://drive.google.com/drive/folders/16Owyax5tXio8759FCxq_pIYZlCrMBLpt?usp=sharing" target="_blank">Ресурсы, предоставляемые библиотекой Карагандинского университета им.Е.А. Букетова
+        </a></h4>
+
+    </div>
+</div>-->
+<!-- <div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div> Уважаемый выпускник!</div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <h4 class="text-success"><i class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></i><a href="https://drive.google.com/open?id=1zdaKVYJqlG96wxpZ-bI0uCxxM65u_i2s" target="_blank">ИНСТРУКЦИЯ ПО ПРОВЕДЕНИЮ ИТОГОВОЙ АТТЕСТАЦИИ</a></h4>
+        <h4 class="text-success"><i class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></i><a href="https://drive.google.com/open?id=1Dfeobabj0xYdQEH1sg_lekatdTFVDbt_" target="_blank">Расписание обзорных лекций</a></h4>
+        <h4 class="text-success"><i class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></i><a href="https://drive.google.com/drive/folders/1lNfV76Yv3uAAjgcCCHvAyhj-vGEdwV9v?usp=sharing" target="_blank">Расписание комплексных экзаменов и защиты дипломных работ</a></h4>
+       <h4 class="text-success"><i class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></i><a href="https://drive.google.com/open?id=16Owyax5tXio8759FCxq_pIYZlCrMBLpt" target="_blank">Научная библиотека</a></h4>
+
+
+    </div>
+</div>
+-->
+
+
+<h2 class="text-primary"><i class="fas fa-info-circle"></i> Уважаемые студенты, магистранты и докторанты!</h2>
+<h2 class="text-success"> <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i> CALL-CENTER</h2>
+
+<p>В связи с переходом  университета на дистанционные образовательные технологии в случае возникновения вопросов касающихся деятельности университета, по образовательному порталу и электронным образовательным ресурсам просим обращаться в call-центр и на следующие электронные почты руководителей:</p>
+<p>&nbsp;</p>
+<table  class="table table-hover">
+    <tbody>
+    <tr>
+        <td  >
+            <p><strong>№</strong></p>
+        </td>
+        <td  >
+            <p><strong>Ф.И.О.</strong></p>
+        </td>
+        <td  >
+            <p><strong>Должность</strong></p>
+        </td>
+        <td >
+            <p><strong>Электронная почта</strong></p>
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td  >
+            <p></p>
+        </td>
+        <td  >
+            <p>Жетимекова Гаухар Женисовна</p>
+        </td>
+        <td  >
+            <p>руководитель Центра дистанционного обучения</p>
+        </td>
+        <td >
+            <p>jetimekova@mail.ru. <br>WHATSAPP 87018954530</p>
+        </td>
+    </tr>
+    <tr>
+        <td  >
+            <p></p>
+        </td>
+        <td  >
+            <p>Микляева Татьяна Вячеславовна</p>
+        </td>
+        <td  >
+            <p>руководитель Центра обслуживания сотрудников и обучающихся</p>
+        </td>
+        <td >
+            <p>idl@ksu.kz. </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Для улучшения работы дистанционной образовательной технологии в вузе просим дать свои предложения на вышеуказанные почты.</p>
+<p>&nbsp;</p>
+
+<!--<h2 class="text-primary">Уважаемые студенты, магистранты, докторанты!</h2>
+
+<p>У Вас появилась уникальная возможность пройти бесплатные онлайн курсы на платформе Coursera.
+Образовательная платформа Coursera предлагает пройти бесплатные онлайн курсы для студентов, магистрантов и докторантов. Курсы проводятся на английском, русском языках. Длительность курса для перезачета кредитов, не должна превышать 4 недель.
+Чтобы пройти один из любых курсов на платформе Coursera, просим отправить информацию на электронную почту yelenaminayeva@yandex.ru:
+<br>1. Фамилия, имя, отчество (на английском языке как в документах);
+<br>2. Адрес электронной почты.
+
+<br>Всем желаем удачи!!!!!!</p>-->
+
+
+
+<!--<h2 class="text-primary">Уважаемые студенты, магистранты и докторанты!</h2>
+<p><strong>С 06.04.2020 года занятия будут проходить, согласно ранее утвержденному расписанию . Для разгрузки интернет ресурсов  дополнительно включена внутренняя система idl параллельно к видеоконференциям. Если обучающие не смогли войти через zoom, то могут через нашу внутреннюю систему вести форум с лекторами.
+Занятия СРСП будут проходить в режиме оффлайн (электронная почта,  ватсап)</strong></p>
+<p><strong>Консультации по профессиональной практике будут проходить в формате форума на портале дистанционного обучения idl.ksu.kz и  в режиме оффлайн</strong></p>
+
+<p>Ежедневно с 20:10 до 20:20 будут проводится технические работы. Извините за неудобства.<br>
+Күн сайын 20:10-нан 20:20-ға дейін техникалық жұмыстар жүргізіледі. Тудырылған ыңғайсыздығымызға кешірім сұраймыз</p>
+
+<h2 class="text-primary"><a href="http://idl.ksu.kz/spr/graf.pdf" target="_blank">График онлайн консультаций для преподавателей</a></h2>
+<h4 class="text-success"><a href="http://idl.ksu.kz/spr/1.pdf" target="_blank">График онлайн вебинаров для ППС по проведению итогового контроля  летней экзаменационной сессии<br> (с 20.04.2020 г. по 25.04.2020 г.)</a></h4>
+<h4 class="text-success"><a href="http://idl.ksu.kz/spr/2.pdf" target="_blank">График онлайн вебинаров для обучающихся (студенты, магистранты и докторанты) по проведению итогового контроля летней экзаменационной сессии <br> (с 21.04.2020 г. по 25.04.2020 г.)</a></h4>
+-->
+
+<p>&nbsp;</p>
+<!--<h2 class="text-primary"><i class="fas fa-info-circle">Адреса входа</i></h2>
+<table class="table table-hover">
+<thead>
+<tr>
+<th>Факультет</th>
+<th>Ссылка</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Биолого-географический</th>
+<td><a href="https://idl3.ksu.kz">idl3.ksu.kz</a></td>
+
+</tr>
+<tr>
+<th scope="row">Иностранных языков</th>
+<td><a href="https://idl3.ksu.kz">idl3.ksu.kz</a></td>
+
+</tr>
+<tr>
+<th scope="row">Исторический</th>
+<td><a href="https://idl3.ksu.kz">idl3.ksu.kz</a></td>
+
+</tr>
+
+
+<tr>
+<th scope="row">Магистратура/Докторантура</th>
+<td><a href="https://magistr.ksu.kz/">magistr.ksu.kz</a></td>
+
+</tr>
+
+<tr>
+<th scope="row">Математики и информационных технологий</th>
+<td><a href="https://idl5.ksu.kz">idl5.ksu.kz</a></td>
+
+</tr>
+
+<tr>
+<th scope="row">Педагогический</th>
+<td><a href="https://teacher.ksu.kz">teacher.ksu.kz</a></td>
+
+</tr>
+
+<tr>
+<th scope="row">Физико-технический </th>
+<td><a href="https://idl5.ksu.kz">idl5.ksu.kz</a></td>
+
+</tr>
+
+<tr>
+<th scope="row">Физической культуры и спорта</th>
+<td><a href="https://idl4.ksu.kz">idl4.ksu.kz</a></td>
+
+</tr>
+
+<tr>
+<th scope="row">Филологический</th>
+<td><a href="https://idl4.ksu.kz">idl4.ksu.kz</a></td>
+
+</tr>
+
+<tr>
+<th scope="row">Философии и психологии</th>
+<td> <a href="https://idl4.ksu.kz">idl4.ksu.kz</a></td>
+
+</tr>
+
+
+<tr>
+<th scope="row">Филологический</th>
+<td><a href="https://idl4.ksu.kz">idl4.ksu.kz</a></td>
+
+</tr>
+
+
+<tr>
+<th scope="row">Химический</th>
+<td><a href="https://him.ksu.kz">him.ksu.kz</a></td>
+
+</tr>
+
+<tr>
+<th scope="row">Экономический</th>
+<td><a href="https://idl2.ksu.kz">idl2.ksu.kz</a></td>
+
+</tr>
+
+
+<tr>
+<th scope="row">Юридический</th>
+<td><a href="https://lawyer.ksu.kz">lawyer.ksu.kz</a></td>
+
+</tr>
+
+
+
+
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+<li  class="btn btn-primary btn-lg btn-block" id=button1><a href="#" style="color:#ffffff;">Инструкции для студентов</a></li>
+
+
+<div id=text1 style="display:none;">
+
+<a  href="https://idl.ksu.kz/spr/istr.pdf" target="_blank">Инструкция для студентов</a>
+<br>
+<a  href="https://idl.ksu.kz/spr/in_rus.pdf" target="_blank">Инструкция для студентов дневного отделения</a>
+
+<div class="video-container" align="center" >
+<iframe align="center"  class="video2" width="560" height="315"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+</div>
+<br>
+<li  class="btn btn-primary btn-lg btn-block" id=button2><a href="#" style="color:#ffffff;">Видеоинструкция для преподавателей</a></li>
+<div id=text2 style="display:none;">
+
+<div class="video-container" align="center" >
+<iframe  align="center" class="video2" width="560" height="315"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+</div>
+
+<h4>На основании письма МОН РК №4-14-5/1026-И от 12 марта 2020 года обучающиеся (студенты, магистранты, докторанты, подготовительное отделение) Карагандинский университет имени академика Е.А.Букетова переходят <b>на онлайн обучение. </b></h4>
+<p>
+<h4>Все учебно-методические материалы, задания доступны обучающимся на портале дистанционного обучения <a href="https://idl.ksu.kz">idl.ksu.kz</a>
+<p>
+<h4>Лекционные занятия  для обучающиеся будут проходить в программе zoom (официальный сайт <a href="https://zoom.us">zoom.us</a>).
+<p>
+<h4>Практические занятия, СРСП, семинарские занятия будут проходить в формате форума на портале дистанционного обучения <a href="https://idl.ksu.kz">idl.ksu.kz</a>
+<p>
+<h4>Обучающимся необходимо посещать занятия согласно утвержденному расписанию.
+<p>
+<h4>Посещение всех видов занятий будут регулироваться в соответствии с академической политикой университета.</h4>
+
+
+
+
+<h2 class="text-primary"><i class="fas fa-info-circle"></i> Уважаемые студенты!</h2>
+<p>Просим Вас получить логин и пароль на сайте центра дистанционного образования.
+Для этого, пройдите по ссылке «Получить пароль /Забыли пароль?» на главной странице сайта idl.ksu.kz.
+Внесите свою фамилию, имя, ИИН и email.
+На указанный Вами электронный адрес придет письмо с Вашим персональным логином и паролем. <br>
+Студентам 1 курса также можно использовать свой пароль для входа в электронный каталог научной библиотеки Карагандинский университет им. Е.А.Букетова
+(<a href="http://webirbis.ksu.kz">http://webirbis.ksu.kz</a> ), где логин это Ваша фамилия на русском (Например, Иванов).
+По вопросам обучения, просим обращаться к офис регистраторам факультетов.
+</p>
+<h2 class="text-primary"><a href="http://idl.ksu.kz/spr/obz.pdf" target="_blank">Расписание обзорных лекция для первого курса</a></h2>
+
+<h2 class="text-primary"><a href="https://drive.google.com/drive/folders/16Owyax5tXio8759FCxq_pIYZlCrMBLpt?usp=sharing" target="_blank">Ресурсы, предоставляемые библиотекой
+</a></h2>
+
+<br><h2 class="text-primary"> <a href='https://schedule.ksu.kz/' class='nav-link' target='_blank' style='color:#337ab7'><i class='far fa-calendar-alt'></i> Расписание занятий </a></h2>
+
+
+<br><h2 class="text-primary"> <a href='https://drive.google.com/open?id=10y9yGmVNQHcNlQmc6MFm5AubJQ3Lf6bb' class='nav-link' target='_blank' style='color:#337ab7'><i class='far fa-calendar-alt'></i> Расписание занятий (1 семестр) </a></h2>
+<h2 class="text-primary"> <a href='https://drive.google.com/open?id=18JqSqIO0kTNjmorzQQsopvS8ReKrrOLv' class='nav-link' target='_blank' style='color:#337ab7'><i class='far fa-calendar-alt'></i>  Расписание занятий  (2 семестр) </a></h2>
+
+
+-->
+
+
+
+            
+            
+
+        
+    </div>
+</div>
+<div class="container">
+    
+        
+            
+
+
+<!--<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;"> <div> Доступ к электронным ресурсам Научной библиотеки
+
+
+    </div>
+</div>
+<div class="card-block" style="padding: 12px 20px;">
+
+<p>- <a href="https://library.ksu.kz/">https://library.ksu.kz/</a> - сайт научной библиотеки Карагандинский университет им.Е.А.Букетова, свободный доступ</p>
+<p>- <a href="https://webirbis.ksu.kz/">https://webirbis.ksu.kz</a> &ndash; электронный каталог (свободный доступ) , &nbsp;электронная библиотека (для скачивания полных текстов лекций и презентаций, вход по логину и паролю)</p>
+<p>- <a href="https://rep.ksu.kz/-">https://rep.ksu.kz/-</a> репозиторий Карагандинский университет, свободный доступ</p>
+<p><i>-</i> <a href="http://webofscience.com-/">http://webofscience.com-</a> <i>Clarivate</i> <i>Analitics</i><i>&nbsp; (</i><i>tomson</i> <i>reuters</i><i>)</i> <i>&nbsp;&nbsp;,  </i>обязательная регистрация в стенах университета для доступа из дома</p>
+<p><i>-</i> <a href="http://rmebrk.kz/">http://rmebrk.kz/</a> - Республиканская межвузовская электронная библиотека, доступ в стенах университета</p>
+<p><i>-</i> &nbsp;<a href="https://elibrary.ru/">https://elibrary.ru</a> &ndash;Научная электронная библиотека , доступ в стенах университета</p>
+<p><i>-</i> <a href="https://online.zakon.kz/">https://online.zakon.kz/</a><i> -</i><i>&nbsp; ИС Параграф &ndash, доступ только в &nbsp;зале &nbsp;электронных ресурсов</i><i> главного корпуса</i></p>
+<p><i>-&nbsp; </i><a href="https://www.scopus.com/">https://www.scopus.com</a> <i>Скопус &nbsp;</i>обязательная регистрация в стенах университет для доступа из дома</p>
+<p><i>- </i><a href="https://www.sciencedirect.com/">https://www.sciencedirect.com</a> <i>Эльзевир</i>&nbsp;&nbsp; обязательная регистрация в стенах университет для доступа из дома</p>
+<p>- &nbsp;<a href="https://res.epigraph.kz/">https://res.epigraph.kz/</a> &nbsp;Эпиграф</p>
+<p>- &nbsp;<a href="https://dlib.eastview.com">https://dlib.eastview.com</a> &nbsp; -издания компании East View Information Services, (Ист Вью).</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<h2 style="text-align: center;">Информация:</h2>
+
+
+
+    
+    
+    
+    
+    
+
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+            <div>Основные направления деятельности отдела дистанционного образования:
+            </div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <ul>
+            <li>Организация и управление учебного процесса по дистанционным образовательным технологиям.</li>
+            <li>Разработка дидактических средств дистанционного обучения.</li>
+            <li>Информационно-техническое обеспечение учебного процесса по дистанционным образовательным технологиям.</li>
+            <li>Создание баз данных информационных образовательных ресурсов.</li>
+            <li>Участие в переподготовке административных, инженерно-технических и научно-педагогических кадров Карагандинского университета им. Е.А. Букетова для эффективного использования информационных и коммуникативных технологий (ИКТ).</li>
+        </ul>
+    </div>
+</div>
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem; border: 1px solid #ebcccc;font-weight: 500;">
+        <div>Учебно-методическая база для обучающихся по дистанционным образовательным технологиям
+        </div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <ul>
+            <li>библиотечный фонд Карагандинского университета имени Е.А. Букетова;</li>
+            <li>электронные лекции, электронные учебники и пособия;</li>
+            <li>курсовые кейсы;</li>
+            <li>видеолекции и видеоматериалы;</li>
+            <li>ресурсы Интернет;</li>
+            <li>доступ к каналам спутникового телевидения;</li>
+            <li>аудиоматериалы.</li>
+        </ul>
+    </div>
+</div>
+<div class="card mb-4" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);">
+    <div class="card-header" style="color: #a94442; font-size: 1.25rem;    border: 1px solid #ebcccc;font-weight: 500;">
+        <div>В помощь всем обучающимся в Карагандинском университете им.Е.А.Букетова библиотека ведет электронный каталог (ЭК) на имеющуюся в ее фондах литературу.
+            ЭК представляет собой целый комплекс каталогов, доступных как в стенах библиотеки, так и через Интернет:
+        </div>
+    </div>
+    <div class="card-block" style="padding: 12px 20px;">
+        <ul>
+            <li>Книги</li>
+            <li>Статьи</li>
+            <li>Авторефераты и диссертации</li>
+            <li>Труды профессорско-преподавательского состава и аспирантов</li>
+            <li>Аудиовизуальные и электронные документы</li>
+            <li>Электронная библиотека</li>
+        </ul>
+    </div>
+</div>
+
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+
+</div>
+<div style="background-color: rgba(47,145,171,0.1)">
+    <div class="container">
+        <h3 style="text-align: center;">Электронный каталог</h3>
+<p>Электронный каталог позволяет осуществлять быстрый, исчерпывающий поиск информации по многим параметрам: автор, название, год и место издания, ключевые слова, предметная рубрика и т.д. Доступ к ЭК осуществляется в залах каталогов учебных библиотек. Помощь в поиске информации в ЭК оказывают библиографы-консультанты, памятки для пользователей. Доступ к ЭК в режиме on-line осуществляется через web-сайт библиотеки <a href="http://library.ksu.kz">http://library.ksu.kz</a>. Для этого на титульной странице сайта необходимо выбрать раздел «Каталоги», а в этом разделе отметить словосочетание «Электронный каталог».<br>
+    <br>
+    В результате Вы получите доступ к меню каталогов. Выбрав необходимый каталог, используйте поисковую форму, которая имеет удобный интерфейс.<br>
+    <br>
+    Имеется возможность регулировать порции выдаваемых документов (от 20 до 100), а так же менять формат результатов поиска.<br>
+    Для просмотра БД, содержащих ключевые слова, фамилии авторов, ISSN/ISBN, нужно, установив метку напротив соответствующего поля, нажать кнопку «Список». При этом на экране появится полный список либо ключевых слов, либо авторов, либо ISSN/ISBN, в зависимости от того, какое поле было помечено.<br>
+    Форма заполнения поискового запроса имеет следующие поля:<br>
+    <b>Тематика поиска</b> – в этом поле можно выбрать тематическое направление поиска. Темы расположены в алфавитном порядке.<br>
+    <b>Ключевые слова </b>- поле можно заполнить напрямую, или выбрать ключевые слова из списка.<br>
+    <b>Поле поиска</b> – здесь указывается направление поиска по полям библиографического описания, такие как: заглавие, наименование коллективного автора, предметные рубрики. Можно не уточнять конкретное поле, выбрать вариант «в любом поле».<br>
+    <b>Логика </b>– указывает на логическую связь между элементами запроса. Логическая связка по И, выдает в ответе на запрос документ, в котором встречаются все элементы запроса. При задании логики ИЛИ, в результатах поиска будет фигурировать, хотя бы один элемент запроса. Для поиска строгого соответствия указанному порядку слов в запросе, нужно выбрать вариант «Фраза целиком».<br>
+    <b>Автор.</b> Поле заполняется напрямую или через список.<br>
+    <b>Вид издания</b> – в этом поле указывается вид издания из предлагаемого перечня.<br>
+    <b>ISSN/ISBN</b> – поле заполняется напрямую или через список.<br>
+    <b>Год издания</b> – указывается только для непериодических изданий.<br>
+    <br>
+    <b>Для успешного осуществления поиска необходимо, чтобы было заполнено хотя бы одно поле формы поискового запроса!</b> Также имеется возможность указывать строгое соответствие слов в составе запроса той формы, в которой они указаны, либо установить более мягкие условия, выбрав режим поиска без учета окончания слов. На web-сайте библиотеки ( <a href="http://library.ksu.kz">http://library.ksu.kz</a> ) можно познакомиться и с Бюллетенем новых поступлений (раздел «Новые поступления») обновляется 6 раз в год и «Бюллетенем периодических изданий», выписанных научной библиотекой Карагандинский университет им.Е.А.Букетова (раздел «Подписка») обновляется 2 раза в год. Помимо библиографических БД библиотека создает и «электронную библиотеку», представленную полнотекстовыми цифровыми версиями учебных и справочных изданий, монографий, а также статей, объединенных в три тематические БД. В настоящее время объем электронной библиотеки составляет 946 названий. Вся информация об имеющихся документах отражена в каталоге «Электронная библиотека». Воспользоваться электронной библиотекой можно в зале Электронных ресурсов на втором этаже главного корпуса. Через Интернет доступ пользователям к электронной библиотеке будет осуществляться в авторизованном режиме к началу нового учебного года.</p>
+    </div>
+</div>-->
+        
+        
+
+    
+</div>
+<br>
+<br>
+
+<div class="footer">
+    <div class="container">
+        <span class="text-muted">Copyright © <a href="http://e.buketov.edu.kz">Электронный университет Карагандинский университет им. академика Е.А.Букетова.</a>
+        </span>
+    </div>
+</div>
+
+
+<!-- modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Если Ваша учётная запись есть в базе данных, на Ваш адрес электронной почты будет отправлено письмо, содержащее инструкции по восстановлению доступа.</h4>
+
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-success d-none" role="alert">
+                </div>
+                <form id="lost-login-request-form" method="post" action="../../../LostLogin" autocomplete="off">
+                    <fieldset>
+                        <legend>Поиск</legend>
+                        <div class="form-group">
+                            <input type="text" name="lname" class="form-control"
+                                   placeholder="Фамилия">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="fname" class="form-control"
+                                   placeholder="Имя">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="inn" id="iin" class="form-control"
+                                   placeholder="ИИН">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control"
+                                   placeholder="E-mail">
+                            <input type="hidden" name="lang" value="rus">
+                            <input type="hidden" name="request_type" value="student_login_request">
+                        </div>
+                    </fieldset>
+                    <button class="btn btn-success">Получить логин и пароль</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var errorMessages = {
+        "ru.first_name_required": "Поле «Имя» является обязательным для заполнения",
+        "ru.last_name_required": "Поле «Фамилия» является обязательным для заполнения",
+        "ru.iin_required": "Введите корректный ИИН",
+        "ru.email_required": "Введите корректный Email",
+        "kz.first_name_required": "Толтырылуы керек 'Аты'",
+        "kz.last_name_required": "Толтырылуы керек 'Тегі'",
+        "kz.iin_required": "Дұрыс ЖСН енгізіңіз",
+        "kz.email_required": "Дұрыс электрондық поштаны енгізіңіз",
+        "en.first_name_required": "The field is required",
+        "en.last_name_required": "The field is required",
+        "en.iin_required": "Please enter a valid IIN",
+        "en.email_required": "Please enter a valid Email"
+    };
+    function show(lang) {
+        window.location.href = window.location.href.split('?')[0] + '?lang=' + lang;
+    }
+    function resetLostLoginForm() {
+        $("#lost-login-request-form")[0].reset();
+        var validator = $("#lost-login-request-form").validate();
+        validator.resetForm();
+    }
+    function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+        return "ru";
+    }
+    $(function(){
+        $("#lost-login-request-form").validate({
+            rules: {
+                lname: "required",
+                fname: "required",
+                inn: {
+                    required: true,
+                    number:true,
+                    minlength: 12,
+                    maxlength: 12
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                lname: errorMessages[getUrlParameter("lang") + ".last_name_required"],
+                // fname: "Введите имя",
+                fname: errorMessages[getUrlParameter("lang") + ".first_name_required"],
+                inn: {
+                    required: errorMessages[getUrlParameter("lang") + ".iin_required"],
+                    minlength: errorMessages[getUrlParameter("lang") + ".iin_required"],
+                    maxlength: errorMessages[getUrlParameter("lang") + ".iin_required"],
+                    number: errorMessages[getUrlParameter("lang") + ".iin_required"]
+                },
+                email: errorMessages[getUrlParameter("lang") + ".email_required"]
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
